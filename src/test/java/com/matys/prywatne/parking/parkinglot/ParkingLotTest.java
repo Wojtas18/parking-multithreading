@@ -44,4 +44,40 @@ public class ParkingLotTest {
 		}
 	}
 
+	@DataProvider(name = "availableParkingSpace")
+	public Object[][] prepareTestIsAvailableParkingSpace() {
+		return new Object[][] { { 10, 5 }, { 3, 2 }, { 6, 4 } };
+	}
+
+	@Test(dataProvider = "availableParkingSpace")
+	public static void testIsAvailableParkingSpace(int parkingSpace, int numberOfCarsOnParkingLot) {
+		// given
+		ParkingLot pl = ParkingLot.createParkingLot(parkingSpace);
+		for (int i = 0; i < numberOfCarsOnParkingLot; i++) {
+			pl.takeAParkingSpace(i, new Car());
+		}
+		// when
+		boolean availableParkingSpace = pl.isAvailableParkingSpace();
+		// then
+		assertThat(availableParkingSpace).isTrue();
+	}
+	
+	@DataProvider(name = "unavailableParkingSpace")
+	public Object[][] prepareTestUnavailableParkingSpace() {
+		return new Object[][] { { 10, 10 }, { 1, 2 }, { 6, 6 } };
+	}
+
+	@Test(dataProvider = "unavailableParkingSpace")
+	public static void testUnavailableParkingSpace(int parkingSpace, int numberOfCarsOnParkingLot) {
+		// given
+		ParkingLot pl = ParkingLot.createParkingLot(parkingSpace);
+		for (int i = 0; i < numberOfCarsOnParkingLot; i++) {
+			pl.takeAParkingSpace(i, new Car());
+		}
+		// when
+		boolean availableParkingSpace = pl.isAvailableParkingSpace();
+		// then
+		assertThat(availableParkingSpace).isFalse();
+	}
+
 }

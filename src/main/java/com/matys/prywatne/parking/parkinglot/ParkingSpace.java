@@ -24,4 +24,14 @@ public class ParkingSpace {
 		return concurrentMap.remove(idParkingSpace, carToUnpark);
 	}
 
+	synchronized Integer firstFreeParkingSpace(int maxParkingSpace) {
+		Integer allParkingSpaceIsOccupied = -1;
+		for (int i = 0; i < maxParkingSpace; i++) {
+			if(concurrentMap.get(i) == null) {
+				return i;
+			}
+		}
+		return allParkingSpaceIsOccupied;
+	}
+
 }
