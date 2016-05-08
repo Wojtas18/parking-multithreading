@@ -15,7 +15,7 @@ public class Valet {
 		return parkingLot.isAvailableParkingSpace();
 	}
 
-	synchronized public Integer pointToTheFirstFreeSpace() {
+	public Integer pointToTheFirstFreeSpace() {
 		return parkingLot.firstFreeParkingSpace();
 	}
 
@@ -25,6 +25,10 @@ public class Valet {
 
 	public boolean unparkCar(Integer idFreeParkingSpace, Car carToUnpark) {
 		return parkingLot.releaseAParkingSpace(idFreeParkingSpace, carToUnpark);
+	}
+	
+	public int ilsscMiejsc() {
+		return parkingLot.getIloscMiejsc();
 	}
 
 }

@@ -25,5 +25,9 @@ public class Driver {
 	public boolean leaveParkingLot(Valet valet, Integer idFreeParkingPlace) {
 		return valet.unparkCar(idFreeParkingPlace, car);
 	}
-
+	
+	@Override
+	public String toString() {
+		return car.toString();
+	}
 }

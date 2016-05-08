@@ -36,5 +36,10 @@ public class Car {
 			return false;
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		return carName;
+	}
 
 }

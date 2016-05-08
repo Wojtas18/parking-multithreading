@@ -40,5 +40,9 @@ public class ParkingLot {
 		return parkingSpace.releaseParkingSpace(idParkingSpace, carToUnpark);
 	}
 
+	public int getIloscMiejsc() {
+		return parkingSpace.numberOfOccupiedParkingSpace();
+	}
+
 
 }
