@@ -3,6 +3,8 @@ package com.matys.prywatne.parking.parkinglot;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import com.matys.prywatne.parking.customer.Car;
+
 public class ParkingSpace {
 	
 	private ConcurrentMap<Integer, Car> concurrentMap;
@@ -28,6 +30,8 @@ public class ParkingSpace {
 		Integer allParkingSpaceIsOccupied = -1;
 		for (int i = 0; i < maxParkingSpace; i++) {
 			if(concurrentMap.get(i) == null) {
+				//rezerwacja miejsca
+				concurrentMap.put(i, new Car());
 				return i;
 			}
 		}

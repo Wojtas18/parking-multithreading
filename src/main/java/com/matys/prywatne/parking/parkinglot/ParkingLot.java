@@ -1,5 +1,7 @@
 package com.matys.prywatne.parking.parkinglot;
 
+import com.matys.prywatne.parking.customer.Car;
+
 public class ParkingLot {
 
 	final int maxParkingSpace;

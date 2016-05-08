@@ -1,9 +1,13 @@
 package com.matys.prywatne.parking.parkinglot;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.matys.prywatne.parking.customer.Car;
 
 public class ParkingLotTest {
 
