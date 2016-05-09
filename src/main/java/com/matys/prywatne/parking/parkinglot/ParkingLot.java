@@ -1,5 +1,7 @@
 package com.matys.prywatne.parking.parkinglot;
 
+import java.util.HashMap;
+
 import com.matys.prywatne.parking.customer.Car;
 
 public class ParkingLot {
@@ -32,7 +34,7 @@ public class ParkingLot {
 		return parkingSpace.takeAParkingSpace(idParkingSpace, carToPark);
 	}
 
-	public Integer firstFreeParkingSpace() {
+	public HashMap<ParkingSpace, Integer> firstFreeParkingSpace() {
 		return parkingSpace.firstFreeParkingSpace(maxParkingSpace);
 	}
 

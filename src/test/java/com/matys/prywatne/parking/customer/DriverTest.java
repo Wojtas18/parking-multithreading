@@ -30,35 +30,35 @@ public class DriverTest {
 		assertThat(availableSpace).isTrue();
 	}
 
-	@Test
-	public static void testAskValetForIdParkingSpaceWhichIsFree() {
-		// given
-		Integer zero = new Integer(0);
-		// when
-		Integer idFreeParkingPlace = driver.askValetForIdParkingSpace(valet);
-		// then
-		assertThat(zero).isEqualTo(idFreeParkingPlace);
-	}
+//	@Test
+//	public static void testAskValetForIdParkingSpaceWhichIsFree() {
+//		// given
+//		Integer zero = new Integer(0);
+//		// when
+//		Integer idFreeParkingPlace = driver.askValetForIdParkingSpace(valet);
+//		// then
+//		assertThat(zero).isEqualTo(idFreeParkingPlace);
+//	}
+//
+//	@Test
+//	public static void testAskValetForParkCar() {
+//		// given
+//		Integer idFreeParkingPlace = driver.askValetForIdParkingSpace(valet);
+//		// when
+//		boolean park = driver.askValetForParkCar(valet, idFreeParkingPlace);
+//		// then
+//		assertThat(park).isTrue();
+//	}
 
-	@Test
-	public static void testAskValetForParkCar() {
-		// given
-		Integer idFreeParkingPlace = driver.askValetForIdParkingSpace(valet);
-		// when
-		boolean park = driver.askValetForParkCar(valet, idFreeParkingPlace);
-		// then
-		assertThat(park).isTrue();
-	}
-
-	@Test
-	public static void testTellValetYouLeaveParkingLot() {
-		// given
-		Integer idFreeParkingPlace = driver.askValetForIdParkingSpace(valet);
-		driver.askValetForParkCar(valet, idFreeParkingPlace);
-		// when
-		boolean park = driver.leaveParkingLot(valet, idFreeParkingPlace);
-		// then
-		assertThat(park).isTrue();
-	}
+//	@Test
+//	public static void testTellValetYouLeaveParkingLot() {
+//		// given
+//		Integer idFreeParkingPlace = driver.askValetForIdParkingSpace(valet);
+//		driver.askValetForParkCar(valet, idFreeParkingPlace);
+//		// when
+//		boolean park = driver.leaveParkingLot(valet, idFreeParkingPlace);
+//		// then
+//		assertThat(park).isTrue();
+//	}
 
 }

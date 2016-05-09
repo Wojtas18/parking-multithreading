@@ -1,5 +1,6 @@
 package com.matys.prywatne.parking.parkinglot;
 
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -26,16 +27,17 @@ public class ParkingSpace {
 		return concurrentMap.remove(idParkingSpace, carToUnpark);
 	}
 
-	public synchronized Integer firstFreeParkingSpace(int maxParkingSpace) {
-		Integer allParkingSpaceIsOccupied = -1;
+	public synchronized HashMap<ParkingSpace, Integer> firstFreeParkingSpace(int maxParkingSpace) {
+		HashMap<ParkingSpace, Integer> reservationParkingSpace = new HashMap<>();
 		for (int i = 0; i < maxParkingSpace; i++) {
 			if(concurrentMap.get(i) == null) {
 				//rezerwacja miejsca
 				concurrentMap.put(i, new Car());
-				return i;
+				reservationParkingSpace.put(this, i);
+				return reservationParkingSpace;
 			}
 		}
-		return allParkingSpaceIsOccupied;
+		return reservationParkingSpace;
 	}
 
 }

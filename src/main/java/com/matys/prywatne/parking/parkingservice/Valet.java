@@ -1,7 +1,10 @@
 package com.matys.prywatne.parking.parkingservice;
 
+import java.util.HashMap;
+
 import com.matys.prywatne.parking.customer.Car;
 import com.matys.prywatne.parking.parkinglot.ParkingLot;
+import com.matys.prywatne.parking.parkinglot.ParkingSpace;
 
 public class Valet {
 
@@ -15,7 +18,7 @@ public class Valet {
 		return parkingLot.isAvailableParkingSpace();
 	}
 
-	public Integer pointToTheFirstFreeSpace() {
+	public HashMap<ParkingSpace, Integer> pointToTheFirstFreeSpace() {
 		return parkingLot.firstFreeParkingSpace();
 	}
 

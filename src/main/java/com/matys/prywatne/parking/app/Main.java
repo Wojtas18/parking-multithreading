@@ -13,7 +13,7 @@ import com.matys.prywatne.parking.parkingservice.Valet;
 public class Main {
 
 	public static void main(String[] args) {
-		ExecutorService executorService = Executors.newFixedThreadPool(20);
+		ExecutorService executorService = Executors.newFixedThreadPool(5);
 		Valet valet = new Valet(ParkingLot.createParkingLot(50));
 		
 		Queue<Driver> driverQueue = new LinkedBlockingQueue<>();
