@@ -22,7 +22,7 @@ public class ParkExecutor implements Runnable {
 		if (driver.parkCar(ps, idParkingSpace)) {
 			System.out.println("Kierowca zaparkował: " + driver + " na miejscu " + idParkingSpace);
 			try {
-				int parkTime = (int) (Math.random());
+				int parkTime = (int) (Math.random() + 10);
 				Thread.sleep(parkTime);
 				System.out.println("Kierowca: " + driver + " był na parkingu na miejscu: " + idParkingSpace + " "
 						+ " przez " + (parkTime / 1000) + " sekund");

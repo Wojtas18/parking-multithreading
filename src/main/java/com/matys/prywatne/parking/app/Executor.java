@@ -24,7 +24,8 @@ public class Executor implements Runnable {
 			}
 			Driver driver = driverQueue.poll();
 			if (driver != null) {
-				int numberOfTryingPark = 2;
+				boolean park = false;
+				int numberOfTryingPark = 5;
 				HashMap<ParkingSpace, Integer> reservationCarSpace = null;
 				System.out.println("Kierowca przyjeżdża na parking samochodem: " + driver);
 				for (int i = 0; i < numberOfTryingPark; i++) {
@@ -33,12 +34,15 @@ public class Executor implements Runnable {
 						if (reservationCarSpace.size() != 0) {
 							Thread parkExecutor = new Thread(new ParkExecutor(driver, reservationCarSpace));
 							parkExecutor.start();
+							park = true;
 							break;
 						}
 					}
-
+					
 				}
-
+				if(!park) {
+					System.out.println(driver + " NIE ZAPARKOWALEM!!!!!");
+				}
 				System.out.println("Aktualna ilosc miejsc: " + valet.ilsscMiejsc());
 			}
 		}

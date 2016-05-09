@@ -13,12 +13,12 @@ import com.matys.prywatne.parking.parkingservice.Valet;
 public class Main {
 
 	public static void main(String[] args) {
-		ExecutorService executorService = Executors.newFixedThreadPool(5);
+		ExecutorService executorService = Executors.newFixedThreadPool(20);
 		Valet valet = new Valet(ParkingLot.createParkingLot(50));
-		
+	
 		Queue<Driver> driverQueue = new LinkedBlockingQueue<>();
 		
-		for (int i = 0; i < 100000; i++) {
+		for (int i = 0; i < 1000000; i++) {
 			Car car = new Car("Samochód nr: " + i);
 			Driver driver = new Driver(car);
 			driverQueue.add(driver);
